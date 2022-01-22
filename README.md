@@ -3,6 +3,7 @@ ToDoList is CRUD application. It is using Java 11, Spring Boot, Maven, H2, Thyme
 
 ##
 ![](screenshot.gif)  
+
 ![](screenshot2.gif)
 ## **Installation**
 In the beggining of instalation you need to install java 11 and maven.
