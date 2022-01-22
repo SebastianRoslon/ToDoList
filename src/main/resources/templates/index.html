@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>ToDoList</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,34 +11,36 @@
 <body>
 
 <div align="center">
+
     <h2>Hello in ToDoList</h2>
     <br>
+
     <form action="#" th:action="@{/save}" th:object="${item}" method="post">
         <div>
-            Enter item:
+            <h5> Enter item: </h5>
             <label>
                 <input type="text" th:field="*{name}" method="post">
                 <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
             </label>
         </div>
-
-
         <input type="submit" class="btn btn-primary" value="Add item">
-
     </form>
-
     <br>
+
     <table>
         <tbody>
         <tr th:each="item: ${items}">
             <td th:text="${item.name}"></td>
-            <td><a th:href="@{/delete/{id}(id=${item.id})}"> [x] </a></td>
+            <td><a th:href="@{/delete/{id}(id=${item.id})}">  [x] </a></td>
         </tr>
+        <tr th:height="20"></tr>
         <tr>
             <td colspan="3" style="text-align: center"><a th:href="@{/deleteAll}">DeleteAll</a></td>
         </tr>
         </tbody>
     </table>
+
 </div>
+
 </body>
 </html>
