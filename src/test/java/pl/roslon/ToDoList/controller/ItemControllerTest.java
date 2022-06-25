@@ -1,5 +1,6 @@
 package pl.roslon.ToDoList.controller;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -22,11 +23,13 @@ public class ItemControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    @DisplayName("Chech if itemController is not null")
     @Test
     void checkIfControllerIsNotNull() {
         assertThat(itemController).isNotNull();
     }
 
+    @DisplayName("Should return expected text")
     @Test
     public void shouldReturnExpectedText() throws Exception {
         this.mockMvc.perform(get("/index"))

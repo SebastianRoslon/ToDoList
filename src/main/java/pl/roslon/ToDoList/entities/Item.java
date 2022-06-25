@@ -14,6 +14,8 @@ import javax.validation.constraints.NotBlank;
 @Setter
 @Getter
 @Entity
+@ToString
+@EqualsAndHashCode
 public class Item {
 
     @Id
