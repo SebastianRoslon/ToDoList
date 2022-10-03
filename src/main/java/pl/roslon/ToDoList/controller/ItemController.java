@@ -30,7 +30,7 @@ public class ItemController {
     }
 
     @PostMapping("/save")
-    public String addUser(@Valid Item item, BindingResult result) {
+    public String addItem(@Valid Item item, BindingResult result) {
         if (result.hasErrors()) {
             return "index";
         }
@@ -39,7 +39,7 @@ public class ItemController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteStudent(@PathVariable("id") Item item) {
+    public String deleteItem(@PathVariable("id") Item item) {
         itemRepository.delete(item);
         return "redirect:/index";
     }
@@ -50,4 +50,3 @@ public class ItemController {
         return "redirect:/index";
     }
 }
-
